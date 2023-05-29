@@ -29,7 +29,7 @@ class TestConversion(unittest.TestCase):
     def test_notRightConversion(self):
         data = {'currency_from': 'unknown_valuta', 'currency_to': 'EUR', 'amount': '10'}
         result = self.app.post('/convert', data=data)
-        self.assertEqual(result.status_code, 500)
+        self.assertEqual(result.status_code, 400)
 
 
 if __name__ == '__main__':
